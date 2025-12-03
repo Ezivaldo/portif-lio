@@ -1,82 +1,204 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio Profissional</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-        body {
-            background: #ffffff;
-            color: #222;
-        }
-        header {
-            width: 100%;
-            padding: 20px;
-            background: #111;
-            color: #fff;
-            text-align: center;
-        }
-        nav a {
-            margin: 0 15px;
-            text-decoration: none;
-            color: #fff;
-            font-weight: bold;
-        }
-        .hero {
-            width: 100%;
-            padding: 80px 20px;
-            text-align: center;
-            background: #f4f4f4;
-        }
-        .hero h1 {
-            font-size: 42px;
-            margin-bottom: 10px;
-        }
-        .hero p {
-            font-size: 20px;
-        }
-        .section {
-            padding: 50px 20px;
-            max-width: 1100px;
-            margin: auto;
-        }
-        h2 {
-            margin-bottom: 20px;
-            font-size: 32px;
-        }
-        .projects {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-        .card {
-            padding: 20px;
-            background: #fff;
-            border-radius: 10px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-        .card h3 {
-            margin-bottom: 10px;
-        }
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: #111;
-            color: #fff;
-            margin-top: 40px;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ezivaldo | Portfólio Profissional</title>
+
+<style>
+:root{
+    --cor-principal:#0f172a;
+    --cor-secundaria:#3b82f6;
+    --cor-clara:#f1f5f9;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Segoe UI", Arial, sans-serif;
+}
+
+body{
+    background:#fff;
+    color:#1e293b;
+    scroll-behavior:smooth;
+}
+
+/* HEADER */
+header{
+    background:var(--cor-principal);
+    padding:20px;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+header h1{
+    color:#fff;
+    text-align:center;
+    margin-bottom:10px;
+}
+
+nav{
+    text-align:center;
+}
+
+nav a{
+    color:#e5e7eb;
+    text-decoration:none;
+    margin:0 15px;
+    font-weight:600;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:var(--cor-secundaria);
+}
+
+/* HERO */
+.hero{
+    padding:100px 20px;
+    text-align:center;
+    background:linear-gradient(135deg,#1e40af,#3b82f6);
+    color:#fff;
+}
+
+.hero h2{
+    font-size:42px;
+    margin-bottom:15px;
+}
+
+.hero p{
+    font-size:20px;
+    margin-bottom:30px;
+}
+
+.hero a{
+    background:#fff;
+    color:#1e40af;
+    padding:14px 30px;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:bold;
+    transition:0.4s;
+}
+
+.hero a:hover{
+    background:#dbeafe;
+    transform:scale(1.05);
+}
+
+/* SEÇÕES */
+.section{
+    padding:80px 20px;
+    max-width:1100px;
+    margin:auto;
+}
+
+.section h3{
+    font-size:32px;
+    margin-bottom:20px;
+}
+
+/* SOBRE */
+.section p{
+    font-size:18px;
+    line-height:1.6;
+}
+
+/* PROJETOS */
+.projects{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+    margin-top:30px;
+}
+
+.card{
+    background:#fff;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+    transition:0.4s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.card h4{
+    margin-bottom:10px;
+    color:var(--cor-secundaria);
+}
+
+/* CONTACTO */
+.contacto{
+    background:linear-gradient(135deg,#2563eb,#3b82f6);
+    color:#fff;
+    padding:80px 20px;
+}
+
+.contacto-container{
+    max-width:1000px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:40px;
+}
+
+.info-box{
+    background:rgba(255,255,255,0.15);
+    padding:25px;
+    border-radius:18px;
+    backdrop-filter: blur(10px);
+    transition:0.4s;
+}
+
+.info-box:hover{
+    transform:translateY(-10px);
+    background:rgba(255,255,255,0.25);
+}
+
+.info-box strong{
+    display:block;
+    margin-top:10px;
+}
+
+.info-box a{
+    display:inline-block;
+    margin-top:15px;
+    padding:12px 24px;
+    background:#fff;
+    color:#2563eb;
+    border-radius:25px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.info-box a:hover{
+    background:#dbeafe;
+}
+
+/* FOOTER */
+footer{
+    background:#020617;
+    color:#e5e7eb;
+    text-align:center;
+    padding:25px;
+}
+
+/* RESPONSIVO */
+@media(max-width:600px){
+    .hero h2{font-size:32px;}
+}
+</style>
 </head>
+
 <body>
 
 <header>
-    <h1>Meu Portfólio</h1>
+    <h1>Ezivaldo</h1>
     <nav>
         <a href="#sobre">Sobre</a>
         <a href="#projetos">Projetos</a>
@@ -85,38 +207,76 @@
 </header>
 
 <section class="hero">
-    <h1>Olá, eu sou o Ezivaldo</h1>
+    <h2>Olá, eu sou Ezivaldo 👋</h2>
     <p>Desenvolvedor Web • Criador de Sistemas • Programador</p>
+    <a href="https://www.tiktok.com/@ezivaldodevcode" target="_blank">
+        Seguir no TikTok
+    </a>
 </section>
 
 <section class="section" id="sobre">
-    <h2>Sobre Mim</h2>
-    <p>Sou um desenvolvedor apaixonado pela criação de sistemas profissionais, websites modernos e aplicações práticas para empresas e negócios.</p>
+    <h3>Sobre Mim</h3>
+    <p>
+        Sou desenvolvedor focado na criação de sistemas profissionais,
+        websites modernos e soluções digitais para empresas, escolas e
+        negócios em crescimento.
+    </p>
 </section>
 
 <section class="section" id="projetos">
-    <h2>Meus Projetos</h2>
+    <h3>Projetos</h3>
+
     <div class="projects">
         <div class="card">
-            <h3>Ezinet Vendas Pro</h3>
-            <p>Sistema completo de vendas com gráficos, exportação e login.</p>
+            <h4>Ezinet Vendas Pro</h4>
+            <p>Sistema avançado de vendas com login, relatórios e exportação.</p>
         </div>
+
         <div class="card">
-            <h3>Ezinet Brain IA</h3>
-            <p>Inteligência artificial avançada para navegação.</p>
+            <h4>Ezinet Brain IA</h4>
+            <p>Inteligência artificial para respostas rápidas e suporte.</p>
         </div>
+
         <div class="card">
-            <h3>Gestão Escolar Pro</h3>
-            <p>Sistema completo de notas, alunos, cursos e controle de propinas.</p>
+            <h4>Gestão Escolar Pro</h4>
+            <p>Plataforma completa para controle escolar e pagamentos.</p>
         </div>
     </div>
 </section>
 
-<section class="section" id="contacto">
-    <h2>Contacto</h2>
-    <p>Email: ezivaldop73@gmail.com</p>
-    <p>Telefone: +244 945 81 79 16</p>
-    <p>Whastapp: +244 945 81 79 16</p>
+<section class="contacto" id="contacto">
+    <div class="contacto-container">
+
+        <div>
+            <h3>📞 Contacto</h3>
+            <p>
+                Tens um projeto ou ideia?  
+                Vamos transformar em realidade digital 🚀
+            </p>
+        </div>
+
+        <div class="info-box">
+            <strong>📧 Email</strong>
+            <p>ezivaldop73@gmail.com</p>
+
+            <strong>📱 WhatsApp</strong>
+            <p>+244 945 81 79 16</p>
+
+            <a href="https://wa.me/244945817916" target="_blank">
+                Falar no WhatsApp
+            </a>
+        </div>
+
+        <div class="info-box">
+            <strong>🎵 TikTok</strong>
+            <p>@ezivaldodevcode</p>
+
+            <a href="https://www.tiktok.com/@ezivaldodevcode" target="_blank">
+                Seguir no TikTok
+            </a>
+        </div>
+
+    </div>
 </section>
 
 <footer>

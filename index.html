@@ -3,194 +3,267 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ezivaldo | Portfólio Profissional</title>
+<title>Ezivaldo | Developer & Systems</title>
 
 <style>
 :root{
-    --cor-principal:#0f172a;
-    --cor-secundaria:#3b82f6;
-    --cor-clara:#f1f5f9;
+  --bg:#0b1020;
+  --card:rgba(255,255,255,0.06);
+  --card-border:rgba(255,255,255,0.12);
+  --primary:#2563eb;
+  --accent:#22d3ee;
+  --violet:#6366f1;
+  --text:#e5e7eb;
+  --muted:#94a3b8;
 }
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:"Segoe UI", Arial, sans-serif;
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Inter,Segoe UI,Arial}
 
 body{
-    background:#fff;
-    color:#1e293b;
-    scroll-behavior:smooth;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(99,102,241,.25), transparent 40%),
+    radial-gradient(circle at 80% 10%, rgba(34,211,238,.25), transparent 40%),
+    var(--bg);
+  color:var(--text);
 }
 
 /* HEADER */
 header{
-    background:var(--cor-principal);
-    padding:20px;
-    position:sticky;
-    top:0;
-    z-index:1000;
-}
-
-header h1{
-    color:#fff;
-    text-align:center;
-    margin-bottom:10px;
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:rgba(11,16,32,0.8);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--card-border);
 }
 
 nav{
-    text-align:center;
+  max-width:1200px;
+  margin:auto;
+  padding:18px 24px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+nav h1{
+  font-size:22px;
+  background:linear-gradient(90deg,var(--accent),var(--primary));
+  -webkit-background-clip:text;
+  color:transparent;
 }
 
 nav a{
-    color:#e5e7eb;
-    text-decoration:none;
-    margin:0 15px;
-    font-weight:600;
-    transition:0.3s;
+  color:var(--text);
+  margin-left:22px;
+  text-decoration:none;
+  font-weight:600;
+  position:relative;
 }
 
-nav a:hover{
-    color:var(--cor-secundaria);
+nav a::after{
+  content:"";
+  position:absolute;
+  bottom:-6px;left:0;
+  width:0;height:2px;
+  background:var(--accent);
+  transition:.4s;
 }
+nav a:hover::after{width:100%}
 
 /* HERO */
 .hero{
-    padding:100px 20px;
-    text-align:center;
-    background:linear-gradient(135deg,#1e40af,#3b82f6);
-    color:#fff;
+  max-width:1200px;
+  margin:auto;
+  padding:120px 24px 80px;
+  display:grid;
+  grid-template-columns:1.3fr 1fr;
+  gap:60px;
 }
 
 .hero h2{
-    font-size:42px;
-    margin-bottom:15px;
+  font-size:52px;
+  line-height:1.05;
+}
+
+.hero h2 span{
+  background:linear-gradient(90deg,var(--accent),var(--violet));
+  -webkit-background-clip:text;
+  color:transparent;
 }
 
 .hero p{
-    font-size:20px;
-    margin-bottom:30px;
+  margin-top:24px;
+  font-size:18px;
+  color:var(--muted);
+  max-width:520px;
 }
 
-.hero a{
-    background:#fff;
-    color:#1e40af;
-    padding:14px 30px;
-    border-radius:30px;
-    text-decoration:none;
-    font-weight:bold;
-    transition:0.4s;
+.hero-buttons{
+  margin-top:40px;
+  display:flex;
+  gap:20px;
 }
 
-.hero a:hover{
-    background:#dbeafe;
-    transform:scale(1.05);
+.hero-buttons a{
+  padding:14px 32px;
+  border-radius:30px;
+  text-decoration:none;
+  font-weight:700;
+  transition:.4s;
+}
+
+.btn-primary{
+  background:linear-gradient(90deg,var(--primary),var(--violet));
+  color:#fff;
+}
+
+.btn-secondary{
+  border:1px solid var(--card-border);
+  color:var(--text);
+}
+
+.hero-buttons a:hover{
+  transform:translateY(-5px) scale(1.03);
+}
+
+/* HERO CARD */
+.hero-card{
+  background:linear-gradient(160deg,rgba(255,255,255,.10),rgba(255,255,255,.02));
+  border:1px solid var(--card-border);
+  padding:32px;
+  border-radius:22px;
+  box-shadow:0 30px 80px rgba(0,0,0,.45);
+}
+
+.hero-card h3{
+  margin-bottom:18px;
+  font-size:20px;
+}
+
+.stat{
+  margin-top:18px;
+  padding-top:18px;
+  border-top:1px solid var(--card-border);
+  display:flex;
+  justify-content:space-between;
+}
+
+.stat div strong{
+  font-size:20px;
+  color:var(--accent);
 }
 
 /* SEÇÕES */
 .section{
-    padding:80px 20px;
-    max-width:1100px;
-    margin:auto;
+  max-width:1200px;
+  margin:auto;
+  padding:100px 24px;
 }
 
 .section h3{
-    font-size:32px;
-    margin-bottom:20px;
+  font-size:38px;
+  margin-bottom:18px;
 }
 
-/* SOBRE */
 .section p{
-    font-size:18px;
-    line-height:1.6;
+  max-width:680px;
+  color:var(--muted);
+  font-size:18px;
 }
 
 /* PROJETOS */
 .projects{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:25px;
-    margin-top:30px;
+  margin-top:60px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:32px;
 }
 
-.card{
-    background:#fff;
-    padding:25px;
-    border-radius:15px;
-    box-shadow:0 10px 30px rgba(0,0,0,0.08);
-    transition:0.4s;
+.project{
+  background:var(--card);
+  border:1px solid var(--card-border);
+  padding:28px;
+  border-radius:22px;
+  backdrop-filter:blur(10px);
+  transition:.4s;
 }
 
-.card:hover{
-    transform:translateY(-10px);
+.project:hover{
+  transform:translateY(-12px) rotateX(4deg);
+  box-shadow:0 25px 60px rgba(0,0,0,.4);
 }
 
-.card h4{
-    margin-bottom:10px;
-    color:var(--cor-secundaria);
+.project h4{
+  color:var(--accent);
+  margin-bottom:10px;
+}
+
+/* SKILLS */
+.skills{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:32px;
+  margin-top:50px;
+}
+
+.skill{
+  background:var(--card);
+  padding:26px;
+  border:1px solid var(--card-border);
+  border-radius:20px;
+}
+
+.bar{
+  height:10px;
+  background:#111827;
+  border-radius:20px;
+  margin-top:10px;
+}
+
+.fill{
+  height:100%;
+  width:0;
+  border-radius:20px;
+  background:linear-gradient(90deg,var(--primary),var(--accent));
+  animation:load 2s forwards;
+}
+
+@keyframes load{
+  to{width:var(--w)}
 }
 
 /* CONTACTO */
-.contacto{
-    background:linear-gradient(135deg,#2563eb,#3b82f6);
-    color:#fff;
-    padding:80px 20px;
+.contact{
+  background:linear-gradient(160deg,rgba(99,102,241,.15),rgba(34,211,238,.15));
+  border-top:1px solid var(--card-border);
 }
 
-.contacto-container{
-    max-width:1000px;
-    margin:auto;
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:40px;
+.contact-box{
+  margin-top:50px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
 }
 
-.info-box{
-    background:rgba(255,255,255,0.15);
-    padding:25px;
-    border-radius:18px;
-    backdrop-filter: blur(10px);
-    transition:0.4s;
-}
-
-.info-box:hover{
-    transform:translateY(-10px);
-    background:rgba(255,255,255,0.25);
-}
-
-.info-box strong{
-    display:block;
-    margin-top:10px;
-}
-
-.info-box a{
-    display:inline-block;
-    margin-top:15px;
-    padding:12px 24px;
-    background:#fff;
-    color:#2563eb;
-    border-radius:25px;
-    text-decoration:none;
-    font-weight:bold;
-}
-
-.info-box a:hover{
-    background:#dbeafe;
+.contact-box div{
+  background:var(--card);
+  border:1px solid var(--card-border);
+  padding:28px;
+  border-radius:22px;
 }
 
 /* FOOTER */
 footer{
-    background:#020617;
-    color:#e5e7eb;
-    text-align:center;
-    padding:25px;
+  text-align:center;
+  padding:40px 20px;
+  color:var(--muted);
 }
 
 /* RESPONSIVO */
-@media(max-width:600px){
-    .hero h2{font-size:32px;}
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr}
+  .contact-box{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -198,89 +271,78 @@ footer{
 <body>
 
 <header>
-    <h1>Ezivaldo</h1>
-    <nav>
-        <a href="#sobre">Sobre</a>
-        <a href="#projetos">Projetos</a>
-        <a href="#contacto">Contacto</a>
-    </nav>
+<nav>
+  <h1>Ezivaldo.dev</h1>
+  <div>
+    <a href="#sobre">Sobre</a>
+    <a href="#projetos">Projetos</a>
+    <a href="#skills">Skills</a>
+    <a href="#contacto">Contacto</a>
+  </div>
+</nav>
 </header>
 
-<section class="hero">
-    <h2>Olá, eu sou Ezivaldo 👋</h2>
-    <p>Desenvolvedor Web • Criador de Sistemas • Programador</p>
-    <a href="https://www.tiktok.com/@ezivaldodevcode" target="_blank">
-        Seguir no TikTok
-    </a>
-</section>
-
-<section class="section" id="sobre">
-    <h3>Sobre Mim</h3>
+<section class="hero" id="sobre">
+  <div>
+    <h2>Crio <span>sistemas inteligentes</span><br>que resolvem problemas reais</h2>
     <p>
-        Sou desenvolvedor focado na criação de sistemas profissionais,
-        websites modernos e soluções digitais para empresas, escolas e
-        negócios em crescimento.
+      Desenvolvedor focado em soluções modernas para empresas, escolas, clínicas
+      e negócios locais, combinando design, performance e automação.
     </p>
+
+    <div class="hero-buttons">
+      <a href="#projetos" class="btn-primary">Ver Projetos</a>
+      <a href="#contacto" class="btn-secondary">Falar Comigo</a>
+    </div>
+  </div>
+
+  <div class="hero-card">
+    <h3>Destaques</h3>
+    <div class="stat">
+      <div><strong>+30</strong><br>Sistemas</div>
+      <div><strong>+5</strong><br>Áreas</div>
+      <div><strong>100%</strong><br>Personalizado</div>
+    </div>
+  </div>
 </section>
 
 <section class="section" id="projetos">
-    <h3>Projetos</h3>
+  <h3>Projetos</h3>
+  <p>Soluções criadas com foco em desempenho, segurança e facilidade de uso.</p>
 
-    <div class="projects">
-        <div class="card">
-            <h4>Ezinet Vendas Pro</h4>
-            <p>Sistema avançado de vendas com login, relatórios e exportação.</p>
-        </div>
-
-        <div class="card">
-            <h4>Ezinet Brain IA</h4>
-            <p>Inteligência artificial para respostas rápidas e suporte.</p>
-        </div>
-
-        <div class="card">
-            <h4>Gestão Escolar Pro</h4>
-            <p>Plataforma completa para controle escolar e pagamentos.</p>
-        </div>
-    </div>
+  <div class="projects">
+    <div class="project"><h4>Ezinet Vendas Pro</h4><p>Sistema de vendas completo com relatórios.</p></div>
+    <div class="project"><h4>Ezinet Brain IA</h4><p>Assistente inteligente para empresas.</p></div>
+    <div class="project"><h4>Gestão Escolar Pro</h4><p>Notas, alunos, pagamentos e controlo.</p></div>
+  </div>
 </section>
 
-<section class="contacto" id="contacto">
-    <div class="contacto-container">
+<section class="section" id="skills">
+  <h3>Skills</h3>
+  <div class="skills">
+    <div class="skill">HTML/CSS<div class="bar"><div class="fill" style="--w:95%"></div></div></div>
+    <div class="skill">JavaScript<div class="bar"><div class="fill" style="--w:90%"></div></div></div>
+    <div class="skill">Sistemas<div class="bar"><div class="fill" style="--w:88%"></div></div></div>
+    <div class="skill">Android<div class="bar"><div class="fill" style="--w:80%"></div></div></div>
+  </div>
+</section>
 
-        <div>
-            <h3>📞 Contacto</h3>
-            <p>
-                Tens um projeto ou ideia?  
-                Vamos transformar em realidade digital 🚀
-            </p>
-        </div>
-
-        <div class="info-box">
-            <strong>📧 Email</strong>
-            <p>ezivaldop73@gmail.com</p>
-
-            <strong>📱 WhatsApp</strong>
-            <p>+244 945 81 79 16</p>
-
-            <a href="https://wa.me/244945817916" target="_blank">
-                Falar no WhatsApp
-            </a>
-        </div>
-
-        <div class="info-box">
-            <strong>🎵 TikTok</strong>
-            <p>@ezivaldodevcode</p>
-
-            <a href="https://www.tiktok.com/@ezivaldodevcode" target="_blank">
-                Seguir no TikTok
-            </a>
-        </div>
-
+<section class="section contact" id="contacto">
+  <h3>Contacto</h3>
+  <div class="contact-box">
+    <div>
+      <p>Email: <strong>ezivaldop73@gmail.com</strong></p>
+      <p>WhatsApp: <strong>+244 945 81 79 16</strong></p>
     </div>
+    <div>
+      <p>TikTok</p>
+      <a href="https://www.tiktok.com/@ezivaldodevcode" target="_blank">Seguir @ezivaldodevcode</a>
+    </div>
+  </div>
 </section>
 
 <footer>
-    © 2025 — Ezivaldo • Portfólio Profissional
+  © 2025 — Ezivaldo • Desenvolvedor Web & Sistemas
 </footer>
 
 </body>
